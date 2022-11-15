@@ -1,21 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1AF894"
-    tools:context=".MainActivity">
+    android:background="@drawable/images"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Это правда так!"
-        android:textSize="50dp"
-        android:textColor="#041575"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_margin="30dp"
+        android:text="Квадратные уравнения"
+        android:textColor="@color/white"
+        android:textSize="30sp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Коэффициент a:"
+        android:textColor="#FF0000"
+        android:textSize="30sp"/>
+    <EditText
+        android:id="@+id/a"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="Введите a..."
+        android:inputType="numberDecimal|numberSigned"
+        android:textColorHint="#909191"
+        android:textColor="@color/white"
+        android:textSize="25sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Коэффициент b:"
+        android:textColor="#00FF00"
+        android:textSize="30sp"/>
+    <EditText
+        android:id="@+id/b"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="Введите b..."
+        android:inputType="numberDecimal|numberSigned"
+        android:textColorHint="#909191"
+        android:textColor="@color/white"
+        android:textSize="25sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Коэффициент c:"
+        android:textColor="#EEFF00"
+        android:textSize="30sp"/>
+    <EditText
+        android:id="@+id/c"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="Введите c..."
+        android:inputType="numberDecimal|numberSigned"
+        android:textColorHint="#909191"
+        android:textColor="@color/white"
+        android:textSize="25sp"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:text="Результат:"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/purple_500"
+        android:textSize="30sp"/>
+
+    <TextView
+        android:id="@+id/x1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textColor="@color/white"
+        android:textSize="30sp"/>
+    <TextView
+        android:id="@+id/x2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textColor="@color/white"
+        android:textSize="30sp"/>
+
+</LinearLayout>
