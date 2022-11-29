@@ -3,96 +3,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/main_bg">
-
+    android:background="@color/main_bg"
+    tools:context=".MainActivity">
     <TextView
-        android:id="@+id/title"
+        android:id="@+id/hello"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:text="@string/app_name"
+        android:layout_marginTop="80dp"
         android:textColor="@color/text_color"
-        android:textSize="30sp" />
+        android:textSize="20sp"
+        tools:text="Привет, example@mail.ru">
+    </TextView>
 
-    <TextView
-        android:id="@+id/problem"
+    <ImageView
+        android:id="@+id/image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/title"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:textColor="@color/text_color"
-        android:textSize="40sp"
-        tools:text="11 + 23 = " />
-
-    <LinearLayout
-        android:id="@+id/solutions"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_below="@id/problem"
+        android:layout_below="@+id/hello"
         android:layout_marginTop="30dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/solution1"
-            android:layout_margin="10dp"
-            android:gravity="center"
-            android:background="@color/still"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:textColor="@color/text_color"
-            android:textSize="40sp"
-            tools:text="34">
-
-        </TextView>
-
-        <TextView
-            android:id="@+id/solution2"
-            android:layout_margin="10dp"
-            android:gravity="center"
-            android:background="@color/still"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:textColor="@color/text_color"
-            android:textSize="40sp"
-            tools:text="34">
-
-        </TextView>
-
-        <TextView
-            android:id="@+id/solution3"
-            android:layout_margin="10dp"
-            android:gravity="center"
-            android:background="@color/still"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:textColor="@color/text_color"
-            android:textSize="40sp"
-            tools:text="34">
-
-        </TextView>
-
-    </LinearLayout>
+        android:scaleType="center">
+    </ImageView>
 
     <Button
-        android:id="@+id/next"
-        android:layout_width="200dp"
+        android:id="@+id/photo"
+        android:layout_width="260dp"
         android:layout_height="80dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="80dp"
         android:background="@drawable/button_style"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:text="Дальше">
-
+        android:textColor="@color/text_color"
+        android:textSize="30sp"
+        android:text="@string/photo">
     </Button>
 
 

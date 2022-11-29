@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">Math Trainer</string>
+    <string name="app_name">Make a photo</string>
+    <string name="registration_screen">Please register here!</string>
+    <string name="main_screen">Main screen</string>
+    <string name="email">Enter your email here </string>
+    <string name="password">Enter your password here </string>
+    <string name="register">Register!</string>
+    <string name="photo">Make a photo</string>
 </resources>

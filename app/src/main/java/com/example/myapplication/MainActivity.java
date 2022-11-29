@@ -1,78 +1,65 @@
 package com.example.myapplication;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.app.Activity;
+import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
-import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.annotation.Nullable;
 
 import com.example.myapplication.databinding.ActivityMainBinding;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity implements View.OnClickListener {
 
-    private ActivityMainBinding binding;
-    private final Problem problem = new Problem();
+    ActivityMainBinding binding;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        Log.i("MAIN_ACT_ONCREATE", "START");
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        generateProblem();
-        MyClickListener listener = new MyClickListener();
-        binding.next.setOnClickListener(listener);
-        binding.solution1.setOnClickListener(listener);
-        binding.solution2.setOnClickListener(listener);
-        binding.solution3.setOnClickListener(listener);
+        Log.v("MAIN_ACT_ONCREATE", "Получаем данные из RegistrationActivity");
+        Intent intent = getIntent();
+        String email = intent.getStringExtra("email");
+        Log.v("MAIN_ACT_ONCREATE", "Выводим email на экран");
+        binding.hello.setText("Hello, " + email);
+        Log.v("MAIN_ACT_ONCREATE", "Присваиваем обработчик кнопке Make a Photo");
+        binding.photo.setOnClickListener(this);
+        Log.i("MAIN_ACT_ONCREATE", "END");
     }
 
-    private void generateProblem() {
-        binding.problem.setText(problem.getProblem());
-        binding.solution1.setBackgroundColor(getColor(R.color.still));
-        binding.solution2.setBackgroundColor(getColor(R.color.still));
-        binding.solution3.setBackgroundColor(getColor(R.color.still));
-        int position = problem.getRandom(1, 4);
-        switch (position) {
-            case 1:
-                binding.solution1.setText(String.valueOf(problem.getResult()));
-                binding.solution2.setText(String.valueOf(problem.getNoiseResult()));
-                binding.solution3.setText(String.valueOf(problem.getNoiseResult()));
-                break;
-            case 2:
-                binding.solution1.setText(String.valueOf(problem.getNoiseResult()));
-                binding.solution2.setText(String.valueOf(problem.getResult()));
-                binding.solution3.setText(String.valueOf(problem.getNoiseResult()));
-                break;
-            case 3:
-                binding.solution1.setText(String.valueOf(problem.getNoiseResult()));
-                binding.solution2.setText(String.valueOf(problem.getNoiseResult()));
-                binding.solution3.setText(String.valueOf(problem.getResult()));
-                break;
-        }
+    private static final int MAKE_PHOTO_REQUEST = 1;
+
+    @Override
+    public void onClick(View view) {
+        Log.i("MAIN_ACT_ONCLICK", "START");
+        Log.v("MAIN_ACT_ONCLICK", "Запускаем MediaStore");
+        Intent intent;
+        intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(intent, MAKE_PHOTO_REQUEST);
+        Log.i("MAIN_ACT_ONCLICK", "END");
     }
 
-    class MyClickListener implements View.OnClickListener {
-        @Override
-        public void onClick(View view) {
-            switch (view.getId()) {
-                case R.id.next:
-                    generateProblem();
-                    break;
-                case R.id.solution1:
-                case R.id.solution2:
-                case R.id.solution3:
-                    String text = ((TextView) view).getText().toString();
-                    if (text.equals(String.valueOf(problem.getResult()))) {
-                        view.setBackgroundColor(getColor(R.color.correct));
-                        Toast.makeText(MainActivity.this, "Правильно!", Toast.LENGTH_SHORT).show();
-                    } else {
-                        view.setBackgroundColor(getColor(R.color.wrong));
-                        Toast.makeText(MainActivity.this, "Неправильно :(", Toast.LENGTH_SHORT).show();
-                    }
-
-            }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        Log.i("MAIN_ACT_onActivityResult", "START");
+        Log.v("MAIN_ACT_onActivityResult", "requestCode = " + requestCode +
+                ", resultCode = " + resultCode);
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == MAKE_PHOTO_REQUEST && resultCode == RESULT_OK) {
+            Log.v("MAIN_ACT_onActivityResult", "Получение данных");
+            Bundle extras = data.getExtras();
+            Bitmap thumbnailBitmap = (Bitmap) extras.get("data");
+            Log.v("MAIN_ACT_onActivityResult", "Загрузка фотографии");
+            binding.image.setImageBitmap(thumbnailBitmap);
+        } else {
+            Log.w("MAIN_ACT_onActivityResult", "Данные НЕ получены!!");
         }
+        Log.i("MAIN_ACT_onActivityResult", "END");
     }
 
 }
