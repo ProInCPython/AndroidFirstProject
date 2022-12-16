@@ -7,4 +7,15 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="background">#FFC107</color>
+    <color name="text_color">#000000</color>
+    <color name="background2">#00BCD4</color>
+    <color name="likeButtonColor">#FFFFFF</color>
+    <color name="likeButtonClickedColor">#FF0000</color>
+    <color name="text_color2">#0B3398</color>
+    <color name="commentsButtonStart">#FFBD00</color>
+    <color name="commentsButtonEnd">#D8FF00</color>
+    <color name="shareButtonStart">#2FFF00</color>
+    <color name="shareButtonEnd">#1B8535</color>
+
 </resources>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background2"
+    tools:context=".CommentsActivity">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/back"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="4dp"
+        android:textAlignment="center"
+        android:background="@drawable/back2"
+        >
+
+    </androidx.appcompat.widget.AppCompatButton>
+
+    <TextView
+        android:id="@+id/news_name"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:textSize="15sp"
+        android:textColor="@color/text_color"
+        android:layout_marginTop="10dp"
+        tools:text="Комментарии под Новости о Чемпионате мира по футболу 2022">
+    </TextView>
+
+    <TextView
+        android:id="@+id/sometext"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:text="Для того, чтобы оставлять комментарии, необходимо зарегистрироваться!"
+        android:textSize="15sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:background="@color/purple_500"
+        android:textAlignment="center"
+        android:layout_below="@+id/news_name"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="20dp"
+        >
+
+    </TextView>
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/comments"
+        android:layout_below="@+id/sometext"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="30dp"
+        android:background="@color/white"
+        android:entries="@array/comments"
+        >
+
+    </ListView>
+
+</RelativeLayout>

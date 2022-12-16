@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background2">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        app:cardCornerRadius="20dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/background2">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:textAlignment="center"
+                android:textColor="@color/text_color"
+                android:textSize="15sp"
+                tools:text="Новости Чемпионата мира по футболу 2022" />
+
+            <ImageView
+                android:id="@+id/photo"
+                android:layout_width="wrap_content"
+                android:layout_height="170dp"
+                android:layout_below="@id/name"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="10dp"
+                tools:src="@drawable/news2" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/photo"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:background="@color/background2"
+                >
+
+                <TextView
+                    android:id="@+id/description"
+                    android:layout_width="wrap_content"
+                    android:background="@color/background2"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_color"
+                    android:textSize="15sp"
+                    android:textAlignment="center"
+                    tools:text="Голы. Франция: О.Тчуамени(17′), О.Жиру(78′). Англия: Г.Кейн(П)(54′)">
+
+                </TextView>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/likeButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/like"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="10dp"
+                android:text="0"
+                android:layout_marginBottom="10dp"
+                android:textAlignment="center"
+                android:textColor="@color/text_color2"
+                android:textSize="20sp">
+
+            </androidx.appcompat.widget.AppCompatButton>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/commentsButton"
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="140dp"
+                android:layout_toRightOf="@id/likeButton"
+                android:background="@drawable/comments"
+                android:text="comments"
+                android:textAlignment="center"
+                android:textColor="@color/text_color"
+                android:textSize="10sp">
+
+            </androidx.appcompat.widget.AppCompatButton>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/shareButton"
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/commentsButton"
+                android:background="@drawable/share"
+                android:text="share"
+                android:textAlignment="center"
+                android:textColor="@color/text_color2"
+                android:textSize="10sp">
+
+            </androidx.appcompat.widget.AppCompatButton>
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>
