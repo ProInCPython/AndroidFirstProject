@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_background"
+    android:orientation="vertical"
+    android:padding="30dp"
+    tools:context=".fragments.LoginFragment">
+
+    <com.example.myapplication.views.InputField
+        android:id="@+id/input_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:inputType="textEmailAddress"
+        app:title="Email address" />
+
+    <com.example.myapplication.views.InputField
+        android:id="@+id/input_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:inputType="textPassword"
+        app:title="Password" />
+
+    <TextView
+        android:id="@+id/text_forgot_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/forgot_password"
+        android:textColor="@color/orange" />
+
+    <com.example.myapplication.views.ActionButton
+        android:id="@+id/button_enter"
+        android:layout_width="320dp"
+        android:layout_height="100dp"
+        android:text="@string/enter"
+        android:layout_gravity="center"/>
+
+</LinearLayout>
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    android:orientation="vertical"-->
+<!--    android:background="@color/main_background"-->
+<!--    tools:context=".fragments.LoginFragment">-->
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:gravity="center"-->
+<!--        android:text="LOGIN"-->
+<!--        android:textSize="40sp" />-->
+
+<!--    <com.example.myapplication.views.InputField-->
+<!--        android:id="@+id/input_email"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:inputType="textEmailAddress"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:title="Email address"/>-->
+
+<!--    <com.example.myapplication.views.InputField-->
+<!--        android:id="@+id/input_password"-->
+<!--        android:layout_marginTop="100dp"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:inputType="textPassword"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:title="Password"/>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/input_forgot_password"-->
+<!--        android:layout_marginStart="3dp"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_marginTop="180dp"-->
+<!--        android:text="@string/forgot_password"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:textColor="@color/orange"/>-->
+
+<!--    <Space-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:layout_weight="1"/>-->
+
+<!--    <com.example.myapplication.views.ActionButton-->
+<!--        android:id="@+id/button_enter"-->
+<!--        android:layout_width="320dp"-->
+<!--        android:layout_height="100dp"-->
+<!--        android:text="@string/enter"-->
+<!--        android:layout_gravity="bottom"/>-->
+
+
+<!--</LinearLayout>-->
